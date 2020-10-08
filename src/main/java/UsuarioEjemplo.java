@@ -1,8 +1,8 @@
-public class Usuario {
+public class UsuarioEjemplo {
     public int cedula;
     public String nombre;
     public int edad;
-    public Usuario(int cedula, String nombre, int edad) {
+    public UsuarioEjemplo(int cedula, String nombre, int edad) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.edad = edad;

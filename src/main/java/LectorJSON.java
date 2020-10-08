@@ -11,8 +11,8 @@ import java.util.TreeMap;
 
 public class LectorJSON {
     public static String ruta = "src/main/resources/database/";
-    public static TreeMap<Integer,Usuario> leerUsuariosJsonTreeSet(){
-        TreeMap<Integer,Usuario> usuariosLeidos = new TreeMap<>();
+    public static TreeMap<Integer, UsuarioEjemplo> leerUsuariosJsonTreeSet(){
+        TreeMap<Integer, UsuarioEjemplo> usuariosLeidos = new TreeMap<>();
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader(ruta+"UsuariosJSON.json")) {
             Object obj = jsonParser.parse(reader);
@@ -31,8 +31,8 @@ public class LectorJSON {
         return usuariosLeidos;
     }
 
-    public static ArrayList<Usuario> leerUsuariosJsonArrayList(){
-        ArrayList<Usuario> usuariosLeidos = new ArrayList<>();
+    public static ArrayList<UsuarioEjemplo> leerUsuariosJsonArrayList(){
+        ArrayList<UsuarioEjemplo> usuariosLeidos = new ArrayList<>();
         JSONParser jsonParser = new JSONParser();
         try (FileReader reader = new FileReader(ruta+"UsuariosJSON.json")) {
             Object obj = jsonParser.parse(reader);
@@ -50,14 +50,14 @@ public class LectorJSON {
         }
         return usuariosLeidos;
     }
-    private static Usuario parseUsuario(JSONObject usuarioJSON)
+    private static UsuarioEjemplo parseUsuario(JSONObject usuarioJSON)
     {
         JSONObject atributos = (JSONObject) usuarioJSON.get("Usuario");
         int cedula = Integer.parseInt((String) atributos.get("cedula"));
         String nombre = (String) atributos.get("nombre");
         int edad = Integer.parseInt((String) atributos.get("edad"));
-        Usuario usuarioLeido = new Usuario(cedula,nombre,edad);
-        return usuarioLeido;
+        UsuarioEjemplo usuarioEjemploLeido = new UsuarioEjemplo(cedula,nombre,edad);
+        return usuarioEjemploLeido;
     }
 
     private static int extractorCedula (JSONObject usuarioJSON)
