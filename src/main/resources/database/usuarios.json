@@ -1,0 +1,23 @@
+[
+  {
+    "documento": 100,
+    "nombre": "Sara",
+    "apellido": "Duque",
+    "correo": "sara@gmail.com",
+    "contrasena": "1234"
+  },
+  {
+    "documento": 101,
+    "nombre": "Pepito",
+    "apellido": "Perez",
+    "correo": "pepito@gmail.com",
+    "contrasena": "1111"
+  },
+  {
+    "documento": 102,
+    "nombre": "Tony",
+    "apellido": "Stark",
+    "correo": "tony@gmail.com",
+    "contrasena": "TonyStark"
+  }
+]
