@@ -1,7 +1,6 @@
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -45,9 +44,7 @@ public class LeerUsuariosJSON {
     }
 
     public static Usuario parseUser(JSONObject usuarioJSON){
-
-//        JSONObject atributos = (JSONObject) usuarioJSON.get("Usuario");
-//        System.out.println("hola" + atributos);
+        
         long documento = ((long) usuarioJSON.get("documento"));
         String nombre = (String) usuarioJSON.get("nombre");
         String apellido = (String) usuarioJSON.get("apellido");

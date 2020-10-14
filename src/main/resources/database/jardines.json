@@ -1,0 +1,23 @@
+[
+  {
+    "nombreDueno": "Susana",
+    "area": 1000,
+    "ambiente": "Húmedo",
+    "temperaturaPromedio": 22,
+    "iluminacion": "Parcialmente soleado"
+  },
+  {
+    "nombreDueno": "Juan",
+    "area": 20,
+    "ambiente": "Parcialmente húmedo",
+    "temperaturaPromedio": 25,
+    "iluminacion": "Soleado"
+  },
+  {
+    "nombreDueno": "Ana",
+    "area": 800,
+    "ambiente": "Seco",
+    "temperaturaPromedio": 30,
+    "iluminacion": "Soleado"
+  }
+]

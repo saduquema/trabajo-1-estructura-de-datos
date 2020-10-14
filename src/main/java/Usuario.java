@@ -16,7 +16,7 @@ public class Usuario {
 
     @Override
     public String toString() {
-        return "Usuario{" +
+        return '\n'+ "Usuario{" +
                 "documento=" + documento +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
