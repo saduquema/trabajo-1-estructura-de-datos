@@ -12,7 +12,7 @@ public class EscribirJardinesJSON {
 
     public static void EscribirJardin() {
 
-        //Solicitud de datos del nuevo usuario
+        //Solicitud de datos del nuevo jardin
         System.out.println("Ingrese los datos del nuevo jardín:");
         System.out.println("Ingrese el nombre del dueño del jardín");
         String nombreDueno = input.next();

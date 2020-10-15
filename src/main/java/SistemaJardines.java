@@ -1,40 +1,42 @@
 import org.json.simple.JSONObject;
 
+
 import java.util.ArrayList;
 import java.util.Scanner;
+
 
 public class SistemaJardines {
 
     public static Scanner input = new Scanner(System.in);
 
-//    public static ArrayList <Usuario> usuariosLeidos = new ArrayList<>();
-    public static ArrayList <Usuario> usuariosLeidos =LeerUsuariosJSON.leerUsuarios();
-    public static ArrayList <Usuario> usuariosCargados = new ArrayList<>();
-    public static ArrayList <Usuario> usuariosEscritos = new ArrayList<>();
-    public static ArrayList <Jardin> jardinesLeidos =LeerJardinesJSON.leerJardines();
-    public static ArrayList <Jardin> jardinesCargados = new ArrayList<>();
-    public static ArrayList <Jardin> jardinesEscritos = new ArrayList<>();
+    //    public static ArrayList <Usuario> usuariosLeidos = new ArrayList<>();
+    public static ArrayList<Usuario> usuariosLeidos = LeerUsuariosJSON.leerUsuarios();
+    public static ArrayList<Usuario> usuariosCargados = new ArrayList<>();
+    public static ArrayList<Usuario> usuariosEscritos = new ArrayList<>();
+    public static ArrayList<Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
+    public static ArrayList<Jardin> jardinesCargados = new ArrayList<>();
+    public static ArrayList<Jardin> jardinesEscritos = new ArrayList<>();
     public static ArrayList<Jardin> jardinesEditados = new ArrayList<>();
     public static ArrayList<Jardin> jardinesEliminados = new ArrayList<>();
-    public static ArrayList <Maceta> macetasLeidos =LeerMacetasJSON.leerMacetas();
-    public static ArrayList <Maceta> macetasCargados = new ArrayList<>();
-    public static ArrayList <Maceta> macetasEscritos = new ArrayList<>();
+    public static ArrayList<Maceta> macetasLeidos = LeerMacetasJSON.leerMacetas();
+    public static ArrayList<Maceta> macetasCargados = new ArrayList<>();
+    public static ArrayList<Maceta> macetasEscritos = new ArrayList<>();
     public static ArrayList<Maceta> macetasEditados = new ArrayList<>();
-    public static ArrayList <Sustrato> sustratosLeidos =LeerSustratoJSON.LeerSustrato();
-    public static ArrayList <Sustrato> sustratosCargados = new ArrayList<>();
-    public static ArrayList <Sustrato> sustratosEscritos = new ArrayList<>();
-    public static ArrayList <Planta> plantasLeidos =LeerPlantaJSON.LeerPlanta();
-    public static ArrayList <Planta> plantasCargados = new ArrayList<>();
-    public static ArrayList <Planta> plantasEscritos = new ArrayList<>();
-    public static ArrayList <Abono> abonosLeidos =LeerAbonosJSON.leerAbonos();
-    public static ArrayList <Abono> abonosCargados = new ArrayList<>();
-    public static ArrayList <Abono> abonosEscritos = new ArrayList<>();
-    public static ArrayList <Plaga> plagasLeidos =LeerPlagaJSON.LeerPlaga();
-    public static ArrayList <Plaga> plagasCargados = new ArrayList<>();
-    public static ArrayList <Plaga> plagasEscritos = new ArrayList<>();
-    public static ArrayList <Remedio> remediosLeidos =LeerRemediosJSON.leerRemedios();
-    public static ArrayList <Remedio> remediosCargados = new ArrayList<>();
-    public static ArrayList <Remedio> remediosEscritos = new ArrayList<>();
+    public static ArrayList<Sustrato> sustratosLeidos = LeerSustratoJSON.LeerSustrato();
+    public static ArrayList<Sustrato> sustratosCargados = new ArrayList<>();
+    public static ArrayList<Sustrato> sustratosEscritos = new ArrayList<>();
+    public static ArrayList<Planta> plantasLeidos = LeerPlantaJSON.LeerPlanta();
+    public static ArrayList<Planta> plantasCargados = new ArrayList<>();
+    public static ArrayList<Planta> plantasEscritos = new ArrayList<>();
+    public static ArrayList<Abono> abonosLeidos = LeerAbonosJSON.leerAbonos();
+    public static ArrayList<Abono> abonosCargados = new ArrayList<>();
+    public static ArrayList<Abono> abonosEscritos = new ArrayList<>();
+    public static ArrayList<Plaga> plagasLeidos = LeerPlagaJSON.LeerPlaga();
+    public static ArrayList<Plaga> plagasCargados = new ArrayList<>();
+    public static ArrayList<Plaga> plagasEscritos = new ArrayList<>();
+    public static ArrayList<Remedio> remediosLeidos = LeerRemediosJSON.leerRemedios();
+    public static ArrayList<Remedio> remediosCargados = new ArrayList<>();
+    public static ArrayList<Remedio> remediosEscritos = new ArrayList<>();
 
     public static void main(String[] args) {
 
@@ -53,9 +55,9 @@ public class SistemaJardines {
 
             option = input.next();
             if (option.equals("1")) {
-            autenticarUsuario();
+                autenticarUsuario();
             } else if (option.equals("2")) {
-            registrarUsuario();
+                registrarUsuario();
             } else if (option.equals("0")) {
                 break;
             }
@@ -63,12 +65,13 @@ public class SistemaJardines {
     }
 
 
-
     public static void autenticarUsuario() {
 
         //        usuariosLeidos = LeerUsuariosJSON.leerUsuarios();
 
-        for(Object usuarioObjeto : usuariosLeidos){
+
+        for (Object usuarioObjeto : usuariosLeidos) {
+
             JSONObject usuarioJSON = (JSONObject) usuarioObjeto;
             usuariosCargados.add(LeerUsuariosJSON.parseUser(usuarioJSON));
         }
@@ -93,9 +96,7 @@ public class SistemaJardines {
         if (hayArroba == true) {
             email = identificacion;
 //            System.out.println("es correo");
-        }
-
-        else if (esnumero == true) {
+        } else if (esnumero == true) {
             id = Integer.parseInt((String) identificacion);
 //            System.out.println("es número");
         }
@@ -113,19 +114,21 @@ public class SistemaJardines {
                     menuPrincipal();
                     usuariosLeidos.clear();
                     return;
-                }
-                else {
+
+                } else {
                     System.out.println("contraseña incorrecta");
+                    usuariosLeidos.clear();
                     return;
                 }
             }
         }
 
-        if (existeUsuario == false){
+
+        if (existeUsuario == false) {
             System.out.println("documento/correo no existe");
+            usuariosLeidos.clear();
         }
     }
-
 
 
     public static void registrarUsuario() {
@@ -140,16 +143,21 @@ public class SistemaJardines {
 
 //        System.out.println(usuariosLeidos);
 
-        for(Object usuarioObjeto : usuariosLeidos){
+
+        for (Object usuarioObjeto : usuariosLeidos) {
+
             JSONObject usuarioJSON = (JSONObject) usuarioObjeto;
             usuariosEscritos.add(LeerUsuariosJSON.parseUser(usuarioJSON));
         }
 
 //        System.out.println(usuariosLeidos);
 //        System.out.println(usuariosCargados);
+
+        System.out.println("¡Registro exitoso!");
+
+
         System.out.println(usuariosEscritos);
     }
-
 
 
     public static void menuPrincipal() {
@@ -176,6 +184,7 @@ public class SistemaJardines {
             if (option.equals("1")) {
                 crudJardines();
             } else if (option.equals("2")) {
+
                 crudMacetas();
             } else if (option.equals("3")) {
                 crudSustratos();
@@ -187,12 +196,12 @@ public class SistemaJardines {
                 crudPlagas();
             } else if (option.equals("7")) {
                 crudRemedios();
+
             } else if (option.equals("0")) {
                 break;
             }
         }
     }
-
 
 
     public static void crudJardines() {
@@ -227,12 +236,13 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verJardines(){
+    //    public static void verJardines(){
+    public static ArrayList verJardines() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object jardinObjeto : jardinesLeidos){
+        for (Object jardinObjeto : jardinesLeidos) {
+
             JSONObject jardinJSON = (JSONObject) jardinObjeto;
             jardinesCargados.add(LeerJardinesJSON.parseUser(jardinJSON));
         }
@@ -240,8 +250,9 @@ public class SistemaJardines {
         System.out.println(jardinesCargados);
 
         jardinesLeidos.clear();
-    }
 
+        return jardinesCargados;
+    }
 
 
     public static void crearJardines() {
@@ -254,17 +265,37 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object jardinOjeto : jardinesLeidos){
+
+        for (Object jardinOjeto : jardinesLeidos) {
+
             JSONObject jardinJSON = (JSONObject) jardinOjeto;
             jardinesEscritos.add(LeerJardinesJSON.parseUser(jardinJSON));
         }
+
 
 //        System.out.println(usuariosLeidos);
 //        System.out.println(usuariosCargados);
         System.out.println(jardinesEscritos);
     }
 
-    public static void eliminarJardines () {
+
+    public static void editarJardines() {
+
+        jardinesLeidos.clear();
+        jardinesEditados.clear();
+        EditarJardinesJSON.EditarJardines();
+
+        for (Object jardinOjeto : jardinesLeidos) {
+            JSONObject jardinJSON = (JSONObject) jardinOjeto;
+            jardinesEditados.add(LeerJardinesJSON.parseUser(jardinJSON));
+        }
+
+        System.out.println(jardinesEditados);
+
+    }
+
+
+    public static void eliminarJardines() {
 //
         jardinesLeidos.clear();
         jardinesEliminados.clear();
@@ -279,19 +310,6 @@ public class SistemaJardines {
 
     }
 
-    public static void editarJardines() {
-
-        jardinesLeidos.clear();
-        jardinesEditados.clear();
-        EditarJardinesJSON.EditarJardines();
-
-        for (Object jardinOjeto : jardinesLeidos) {
-            JSONObject jardinJSON = (JSONObject) jardinOjeto;
-            jardinesEditados.add(LeerJardinesJSON.parseUser(jardinJSON));
-        }
-
-        System.out.println(jardinesEditados);
-    }
 
     public static void crudMacetas() {
 
@@ -325,12 +343,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verMacetas(){
+    public static void verMacetas() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object macetaObjeto : macetasLeidos){
+        for (Object macetaObjeto : macetasLeidos) {
             JSONObject macetaJSON = (JSONObject) macetaObjeto;
             macetasCargados.add(LeerMacetasJSON.parseUser(macetaJSON));
         }
@@ -339,7 +356,6 @@ public class SistemaJardines {
 
         macetasLeidos.clear();
     }
-
 
 
     public static void crearMacetas() {
@@ -352,7 +368,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object macetaOjeto : macetasLeidos){
+        for (Object macetaOjeto : macetasLeidos) {
             JSONObject macetaJSON = (JSONObject) macetaOjeto;
             macetasEscritos.add(LeerMacetasJSON.parseUser(macetaJSON));
         }
@@ -361,6 +377,7 @@ public class SistemaJardines {
 //        System.out.println(usuariosCargados);
         System.out.println(macetasEscritos);
     }
+
     public static void editarMacetas() {
 
         macetasLeidos.clear();
@@ -374,6 +391,7 @@ public class SistemaJardines {
 
         System.out.println(macetasEditados);
     }
+
     public static void crudSustratos() {
 
         String option;
@@ -406,12 +424,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verSustratos(){
+    public static void verSustratos() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object sustratoObjeto : sustratosLeidos){
+        for (Object sustratoObjeto : sustratosLeidos) {
             JSONObject sustratoJSON = (JSONObject) sustratoObjeto;
             sustratosCargados.add(LeerSustratoJSON.parseUser(sustratoJSON));
         }
@@ -420,7 +437,6 @@ public class SistemaJardines {
 
         sustratosLeidos.clear();
     }
-
 
 
     public static void crearSustratos() {
@@ -433,7 +449,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object sustratoObjeto : sustratosLeidos){
+        for (Object sustratoObjeto : sustratosLeidos) {
             JSONObject sustratoJSON = (JSONObject) sustratoObjeto;
             sustratosEscritos.add(LeerSustratoJSON.parseUser(sustratoJSON));
         }
@@ -442,6 +458,7 @@ public class SistemaJardines {
 //        System.out.println(usuariosCargados);
         System.out.println(sustratosEscritos);
     }
+
     public static void crudPlantas() {
 
         String option;
@@ -474,12 +491,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verPlantas(){
+    public static void verPlantas() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object plantaObjeto : plantasLeidos){
+        for (Object plantaObjeto : plantasLeidos) {
             JSONObject plantaJSON = (JSONObject) plantaObjeto;
             plantasCargados.add(LeerPlantaJSON.parseUser(plantaJSON));
         }
@@ -488,7 +504,6 @@ public class SistemaJardines {
 
         plantasLeidos.clear();
     }
-
 
 
     public static void crearPlantas() {
@@ -501,7 +516,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object plantaObjeto : plantasLeidos){
+        for (Object plantaObjeto : plantasLeidos) {
             JSONObject plantaJSON = (JSONObject) plantaObjeto;
             plantasEscritos.add(LeerPlantaJSON.parseUser(plantaJSON));
         }
@@ -510,6 +525,7 @@ public class SistemaJardines {
 //        System.out.println(usuariosCargados);
         System.out.println(plantasEscritos);
     }
+
     public static void crudAbonos() {
 
         String option;
@@ -542,12 +558,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verAbonos(){
+    public static void verAbonos() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object abonoObjeto : abonosLeidos){
+        for (Object abonoObjeto : abonosLeidos) {
             JSONObject abonoJSON = (JSONObject) abonoObjeto;
             abonosCargados.add(LeerAbonosJSON.parseUser(abonoJSON));
         }
@@ -556,7 +571,6 @@ public class SistemaJardines {
 
         abonosLeidos.clear();
     }
-
 
 
     public static void crearAbonos() {
@@ -569,7 +583,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object abonoObjeto : abonosLeidos){
+        for (Object abonoObjeto : abonosLeidos) {
             JSONObject abonoJSON = (JSONObject) abonoObjeto;
             abonosEscritos.add(LeerAbonosJSON.parseUser(abonoJSON));
         }
@@ -578,6 +592,7 @@ public class SistemaJardines {
 //        System.out.println(usuariosCargados);
         System.out.println(abonosEscritos);
     }
+
     public static void crudPlagas() {
 
         String option;
@@ -610,12 +625,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verPlagas(){
+    public static void verPlagas() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object plagaObjeto : plagasLeidos){
+        for (Object plagaObjeto : plagasLeidos) {
             JSONObject plagaJSON = (JSONObject) plagaObjeto;
             plagasCargados.add(LeerPlagaJSON.parseUser(plagaJSON));
         }
@@ -624,7 +638,6 @@ public class SistemaJardines {
 
         plagasLeidos.clear();
     }
-
 
 
     public static void crearPlagas() {
@@ -637,7 +650,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object plagaObjeto : plagasLeidos){
+        for (Object plagaObjeto : plagasLeidos) {
             JSONObject plagaJSON = (JSONObject) plagaObjeto;
             plagasEscritos.add(LeerPlagaJSON.parseUser(plagaJSON));
         }
@@ -646,6 +659,7 @@ public class SistemaJardines {
 //        System.out.println(usuariosCargados);
         System.out.println(plagasEscritos);
     }
+
     public static void crudRemedios() {
 
         String option;
@@ -678,12 +692,11 @@ public class SistemaJardines {
     }
 
 
-
-    public static void verRemedios(){
+    public static void verRemedios() {
 
 //        ArrayList <Jardin> jardinesLeidos = LeerJardinesJSON.leerJardines();
 
-        for(Object remedioObjeto : remediosLeidos){
+        for (Object remedioObjeto : remediosLeidos) {
             JSONObject remedioJSON = (JSONObject) remedioObjeto;
             remediosCargados.add(LeerRemediosJSON.parseUser(remedioJSON));
         }
@@ -692,7 +705,6 @@ public class SistemaJardines {
 
         remediosLeidos.clear();
     }
-
 
 
     public static void crearRemedios() {
@@ -705,7 +717,7 @@ public class SistemaJardines {
 
 //        System.out.println(jardinesLeidos);
 
-        for(Object remedioObjeto : remediosLeidos){
+        for (Object remedioObjeto : remediosLeidos) {
             JSONObject remedioJSON = (JSONObject) remedioObjeto;
             remediosEscritos.add(LeerRemediosJSON.parseUser(remedioJSON));
         }
@@ -715,3 +727,4 @@ public class SistemaJardines {
         System.out.println(remediosEscritos);
     }
 }
+
