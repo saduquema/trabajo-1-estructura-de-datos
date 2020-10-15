@@ -14,22 +14,22 @@ public class EscribirMacetasJSON {
 
         //Solicitud de datos del nuevo usuario
         System.out.println("Ingrese la referencia de la nueva maceta: ");
-        int referencia = input.nextInt();
+        long referencia = input.nextLong();
 
         System.out.println("Ingrese el material: ");
         String material = input.next();
 
         System.out.println("Ingrese el diametro: ");
-        int diametro = input.nextInt();
+        long diametro = input.nextLong();
 
         System.out.println("Ingrese la profundidad: ");
-        int profundidad = input.nextInt();
+        long profundidad = input.nextLong();
 
         System.out.println("Ingrese la cantidad: ");
-        int cantidad = input.nextInt();
+        long cantidad = input.nextInt();
 
         System.out.println("Ingrese el costoUnitario: ");
-        int costoUnitario = input.nextInt();
+        long costoUnitario = input.nextLong();
 
         //Convirtiendo a objeto Usuario
         JSONObject userDetails = new JSONObject();
@@ -41,26 +41,26 @@ public class EscribirMacetasJSON {
         userDetails.put("costoUnitario", costoUnitario);
 
         //Add employee to list
-        JSONArray jardinesList = LeerMacetasJSON.leerMacetas();
+        JSONArray macetasList = LeerMacetasJSON.leerMacetas();
 
-//      Verificando que no exista el mismo nombre del dueño en la lista de jardines
-        for (Object jardinObjeto : jardinesList) {
-            JSONObject jardinJSON = (JSONObject) jardinObjeto;
-            int referenciai = (int) jardinJSON.get("referencia");
-            if (referencia == (referencia)) {
+//      Verificando que no exista la misma maceta
+        for (Object macetaObjeto : macetasList) {
+            JSONObject macetaJSON = (JSONObject) macetaObjeto;
+            long referenciai = (long) macetaJSON.get("referencia");
+            if (referenciai == referencia) {
                 System.out.println("La maceta con esa referencia ya existe");
                 return;
             }
         }
 
-        jardinesList.add(userDetails);
+        macetasList.add(userDetails);
 
 
         //Write JSON file
 //        try (FileWriter file = new FileWriter(ruta + "usuarios.json", true)) {
-        try (FileWriter file = new FileWriter(ruta + "jardines.json")) {
+        try (FileWriter file = new FileWriter(ruta + "macetas.json")) {
 
-            file.write(jardinesList.toJSONString());
+            file.write(macetasList.toJSONString());
             file.flush();
 
         } catch (IOException e) {

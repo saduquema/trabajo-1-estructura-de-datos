@@ -1,10 +1,10 @@
 public class Plaga {
-    public int Referencia;
+    public long Referencia;
     public String Organismo;
-    public int Cantidad;
+    public long Cantidad;
     public String Remedio;
 
-    public Plaga(int Referencia, String Organismo, int Cantidad, String Remedio) {
+    public Plaga(long Referencia, String Organismo, long Cantidad, String Remedio) {
         this.Referencia = Referencia;
         this.Organismo = Organismo;
         this.Cantidad = Cantidad;

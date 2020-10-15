@@ -47,12 +47,12 @@ public class LeerMacetasJSON {
 
 //        JSONObject atributos = (JSONObject) macetaJSON.get("Maceta");
 //        System.out.println("hola" + atributos);
-        int referencia = ((int) macetaJSON.get("referencia"));
+        long referencia = ((long) macetaJSON.get("referencia"));
         String material = (String) macetaJSON.get("material");
-        int diametro = (int) macetaJSON.get("diametro");
-        int profundidad = (int) macetaJSON.get("maceta");
-        int cantidad = ((int) macetaJSON.get("cantidad"));
-        int costoUnitario = ((int) macetaJSON.get("costoUnitario"));
+        long diametro = (long) macetaJSON.get("diametro");
+        long profundidad = ((long) macetaJSON.get("profundidad"));
+        long cantidad = ((long) macetaJSON.get("cantidad"));
+        long costoUnitario = ((long) macetaJSON.get("costoUnitario"));
 
         Maceta macetasLeidas = new Maceta(referencia, material, diametro, profundidad, cantidad,costoUnitario);
 

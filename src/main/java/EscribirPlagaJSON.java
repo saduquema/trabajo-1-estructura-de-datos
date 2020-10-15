@@ -15,15 +15,15 @@ public class EscribirPlagaJSON {
         System.out.println("Ingrese los datos de la nueva plaga:");
 
         System.out.println("Ingrese la referencia:");
-        int Referencia = input.nextInt();
+        long Referencia = input.nextLong();
 
         System.out.println("Ingrese el nombre del organismo:");
         String Organismo = input.next();
 
         System.out.println("Ingrese la cantidad del organismo:");
-        int Cantidad  = input.nextInt();
+        long Cantidad  = input.nextLong();
 
-        System.out.println("ingrese el Porcentaje de abono:");
+        System.out.println("ingrese el remedio:");
         String Remedio = input.next();
 
         JSONObject PlagaDetails = new JSONObject();

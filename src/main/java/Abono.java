@@ -1,10 +1,10 @@
 public class Abono {
-    public int referencia;
+    public long referencia;
     public String tipoOrigen;
     public String funcionalidad;
     public String presentacion;
-    public int costo;
-    public Abono( int referencia,String tipoOrigen, String funcionalidad, String presentacion, int costo){
+    public long costo;
+    public Abono( long referencia,String tipoOrigen, String funcionalidad, String presentacion, long costo){
         this.referencia = referencia;
         this.tipoOrigen = tipoOrigen;
         this.funcionalidad = funcionalidad;

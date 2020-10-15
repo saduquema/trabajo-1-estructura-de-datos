@@ -31,9 +31,9 @@ public class EscribirSustratoJSON {
 
         JSONObject SustratoDetails = new JSONObject();
         SustratoDetails.put("Referencia", Referencia);
-        SustratoDetails.put("Porcentaje de tierra", PorcentajeDeTierra);
-        SustratoDetails.put("Porcentaje de minerales", PorcentajeDeMinerales);
-        SustratoDetails.put("Porcentaje de abono", PorcentajeDeAbono);
+        SustratoDetails.put("PorcentajeDeTierra", PorcentajeDeTierra);
+        SustratoDetails.put("PorcentajeDeMinerales", PorcentajeDeMinerales);
+        SustratoDetails.put("PorcentajeDeAbono", PorcentajeDeAbono);
         SustratoDetails.put("Costo", Costo);
 
         JSONArray sustratoList = LeerSustratoJSON.LeerSustrato();

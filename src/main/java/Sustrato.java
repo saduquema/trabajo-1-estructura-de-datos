@@ -1,8 +1,4 @@
-import java.util.Scanner;
-
 public class Sustrato {
-    public static String ruta = "src/main/resources/database/";
-    public static Scanner input = new Scanner(System.in);
     public long Referencia;
     public long PorcentajeDeTierra;
     public long PorcentajeDeMinerales;
@@ -21,10 +17,10 @@ public class Sustrato {
     public String toString() {
         return "Sustrato{" +
                 "Referencia='" + Referencia + '\'' +
-                ", Porcentaje de tierra=" + PorcentajeDeTierra + '\'' +
-                ", Porcentaje de minerales='" + PorcentajeDeMinerales + '\'' +
-                ", Porcentaje de abono=" + PorcentajeDeAbono + '\'' +
-                ", costo=" + Costo + '\'' +
+                ", PorcentajeDeTierra=" + PorcentajeDeTierra + '\'' +
+                ", PorcentajeDeMinerales='" + PorcentajeDeMinerales + '\'' +
+                ", PorcentajeDeAbono=" + PorcentajeDeAbono + '\'' +
+                ", Costo=" + Costo + '\'' +
                 '}';
     }
 }

@@ -1,12 +1,12 @@
 public class Planta {
-    public int Referencia;
+    public long Referencia;
     public String Genero;
-    public int Diametro;
-    public int ProfundidadRaices;
+    public long Diametro;
+    public long ProfundidadRaices;
     public String RequerimientoIluminacion;
-    public int Cantidad;
-    public int Costo;
-    public Planta(int Referencia,String Genero,int Diametro,int ProfundidadRaices,String RequerimientoIluminacion,int Cantidad,int Costo){
+    public long Cantidad;
+    public long Costo;
+    public Planta(long Referencia,String Genero,long Diametro,long ProfundidadRaices,String RequerimientoIluminacion,long Cantidad,long Costo){
         this.Referencia=Referencia;
         this.Genero=Genero;
         this.Diametro=Diametro;

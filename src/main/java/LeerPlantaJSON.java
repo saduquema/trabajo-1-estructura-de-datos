@@ -36,13 +36,13 @@ public class LeerPlantaJSON {
 
     public static Planta parseUser(JSONObject plantaJSON) {
 
-        int Referencia = (int) plantaJSON.get("referencia");
+        long Referencia = (long) plantaJSON.get("Referencia");
         String Genero = (String) plantaJSON.get("Genero");
-        int Diametro = (int) plantaJSON.get("Diametro");
-        int ProfundidadRaices = (int) plantaJSON.get("Profundidad de raices");
-        String RequerimientoIluminacion = (String) plantaJSON.get("Requerimiento de iluminacion");
-        int Cantidad = (int) plantaJSON.get("Cantidad");
-        int Costo = (int) plantaJSON.get("Costo");
+        long Diametro = (long) plantaJSON.get("Diametro");
+        long ProfundidadRaices = (long) plantaJSON.get("ProfundidadRaices");
+        String RequerimientoIluminacion = (String) plantaJSON.get("RequerimientoIluminacion");
+        long Cantidad = (long) plantaJSON.get("Cantidad");
+        long Costo = (long) plantaJSON.get("Costo");
 
         Planta PlantaLeidos = new Planta(Referencia, Genero, Diametro, ProfundidadRaices,RequerimientoIluminacion,Cantidad,Costo);
 

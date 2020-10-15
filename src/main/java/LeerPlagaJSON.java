@@ -36,9 +36,9 @@ public class LeerPlagaJSON {
 
     public static Plaga parseUser(JSONObject plagaJSON) {
 
-        int Referencia = (int) plagaJSON.get("referencia");
+        long Referencia = (long) plagaJSON.get("Referencia");
         String Organismo = (String) plagaJSON.get("Organismo");
-        int Cantidad = (int) plagaJSON.get("Cantidad");
+        long Cantidad = (long) plagaJSON.get("Cantidad");
         String Remedio = (String) plagaJSON.get("Remedio");
 
         Plaga PlagaLeidos = new Plaga(Referencia, Organismo, Cantidad, Remedio);

@@ -1,12 +1,12 @@
 
 public class Maceta {
-    public int referencia;
+    public long referencia;
     public String material;
-    public int diametro;
-    public int profundidad;
-    public int cantidad;
-    public int costoUnitario;
-    public Maceta( int referencia,String material, int diametro, int profundiad, int cantidad, int costoUnitario){
+    public long diametro;
+    public long profundidad;
+    public long cantidad;
+    public long costoUnitario;
+    public Maceta( long referencia,String material, long diametro, long profundiad, long cantidad, long costoUnitario){
         this.referencia = referencia;
         this.material = material;
         this.diametro = diametro;

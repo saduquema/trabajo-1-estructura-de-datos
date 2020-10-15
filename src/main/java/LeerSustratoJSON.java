@@ -36,13 +36,13 @@ public class LeerSustratoJSON {
         return SustratosLeidos;
     }
 
-    public static Sustrato parseUser(JSONObject usuarioJSON) {
+    public static Sustrato parseUser(JSONObject sustratoJSON) {
 
-        long Referencia = ((long) usuarioJSON.get("referencia"));
-        long PorcentajeDeTierra = (long) usuarioJSON.get("porcentaje de tierra");
-        long PorcentajeDeMinerales = (long) usuarioJSON.get("porcentaje de minerales");
-        long PorcentajeDeAbono = (long) usuarioJSON.get("porcentaje de abono");
-        long Costo = (long) usuarioJSON.get("costo");
+        long Referencia = ((long) sustratoJSON.get("Referencia"));
+        long PorcentajeDeTierra = ((long) sustratoJSON.get("PorcentajeDeTierra"));
+        long PorcentajeDeMinerales = (long) sustratoJSON.get("PorcentajeDeMinerales");
+        long PorcentajeDeAbono = (long) sustratoJSON.get("PorcentajeDeAbono");
+        long Costo = (long) sustratoJSON.get("Costo");
 
         Sustrato SustratosLeido = new Sustrato(Referencia, PorcentajeDeTierra, PorcentajeDeMinerales, PorcentajeDeAbono, Costo);
 
