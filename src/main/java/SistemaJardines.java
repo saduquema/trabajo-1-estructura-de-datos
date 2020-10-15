@@ -20,6 +20,7 @@ public class SistemaJardines {
     public static ArrayList <Maceta> macetasCargados = new ArrayList<>();
     public static ArrayList <Maceta> macetasEscritos = new ArrayList<>();
     public static ArrayList<Maceta> macetasEditados = new ArrayList<>();
+    public static ArrayList<Maceta> macetasEliminados = new ArrayList<>();
     public static ArrayList <Sustrato> sustratosLeidos =LeerSustratoJSON.LeerSustrato();
     public static ArrayList <Sustrato> sustratosCargados = new ArrayList<>();
     public static ArrayList <Sustrato> sustratosEscritos = new ArrayList<>();
@@ -29,13 +30,16 @@ public class SistemaJardines {
     public static ArrayList <Abono> abonosLeidos =LeerAbonosJSON.leerAbonos();
     public static ArrayList <Abono> abonosCargados = new ArrayList<>();
     public static ArrayList <Abono> abonosEscritos = new ArrayList<>();
+    public static ArrayList<Abono> abonosEditados = new ArrayList<>();
+    public static ArrayList<Abono> abonosEliminados = new ArrayList<>();
     public static ArrayList <Plaga> plagasLeidos =LeerPlagaJSON.LeerPlaga();
     public static ArrayList <Plaga> plagasCargados = new ArrayList<>();
     public static ArrayList <Plaga> plagasEscritos = new ArrayList<>();
     public static ArrayList <Remedio> remediosLeidos =LeerRemediosJSON.leerRemedios();
     public static ArrayList <Remedio> remediosCargados = new ArrayList<>();
     public static ArrayList <Remedio> remediosEscritos = new ArrayList<>();
-
+    public static ArrayList<Remedio> remediosEditados = new ArrayList<>();
+    public static ArrayList<Remedio> remediosEliminados = new ArrayList<>();
     public static void main(String[] args) {
 
         //Menú inicial - usuario
@@ -316,7 +320,7 @@ public class SistemaJardines {
             } else if (option.equals("3")) {
                 editarMacetas();
             } else if (option.equals("4")) {
-//                eliminarJardines();
+                eliminarMacetas();
             } else if (option.equals("0")) {
                 break;
             }
@@ -373,6 +377,20 @@ public class SistemaJardines {
         }
 
         System.out.println(macetasEditados);
+    }
+    public static void eliminarMacetas () {
+//
+        macetasLeidos.clear();
+        macetasEliminados.clear();
+        EliminarMacetasJSON.EliminarMacetas();
+
+        for (Object macetaOjeto : macetasLeidos) {
+            JSONObject macetaJSON = (JSONObject) macetaOjeto;
+            macetasEliminados.add(LeerMacetasJSON.parseUser(macetaJSON));
+        }
+
+        System.out.println(macetasEliminados);
+
     }
     public static void crudSustratos() {
 
@@ -533,7 +551,7 @@ public class SistemaJardines {
             } else if (option.equals("3")) {
 //                editarJardines();
             } else if (option.equals("4")) {
-//                eliminarJardines();
+                eliminarAbonos();
             } else if (option.equals("0")) {
                 break;
             }
@@ -577,6 +595,20 @@ public class SistemaJardines {
 //        System.out.println(usuariosLeidos);
 //        System.out.println(usuariosCargados);
         System.out.println(abonosEscritos);
+    }
+    public static void eliminarAbonos () {
+//
+        abonosLeidos.clear();
+        abonosEliminados.clear();
+        EliminarAbonosJSON.EliminarAbonos();
+
+        for (Object abonoObjeto : abonosLeidos) {
+            JSONObject abonoJSON = (JSONObject) abonoObjeto;
+            abonosEliminados.add(LeerAbonosJSON.parseUser(abonoJSON));
+        }
+
+        System.out.println(abonosEliminados);
+
     }
     public static void crudPlagas() {
 
@@ -669,7 +701,7 @@ public class SistemaJardines {
             } else if (option.equals("3")) {
 //                editarJardines();
             } else if (option.equals("4")) {
-//                eliminarJardines();
+                eliminarRemedios();
             } else if (option.equals("0")) {
                 break;
             }
@@ -713,5 +745,19 @@ public class SistemaJardines {
 //        System.out.println(usuariosLeidos);
 //        System.out.println(usuariosCargados);
         System.out.println(remediosEscritos);
+    }
+    public static void eliminarRemedios () {
+//
+        remediosLeidos.clear();
+        remediosEliminados.clear();
+        EliminarRemediosJSON.EliminarRemedios();
+
+        for (Object remedioObjeto : remediosLeidos) {
+            JSONObject remedioJSON = (JSONObject) remedioObjeto;
+            remediosEliminados.add(LeerRemediosJSON.parseUser(remedioJSON));
+        }
+
+        System.out.println(remediosEliminados);
+
     }
 }
