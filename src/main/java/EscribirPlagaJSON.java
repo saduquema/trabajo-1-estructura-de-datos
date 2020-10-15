@@ -33,9 +33,18 @@ public class EscribirPlagaJSON {
         PlagaDetails.put("Remedio", Remedio);
 
         JSONArray plagaList = LeerPlagaJSON.LeerPlaga();
+
+        for (Object plagaObjeto : plagaList) {
+            JSONObject plagaJSON = (JSONObject) plagaObjeto;
+            long Referenciai = (long) plagaJSON.get("Referencia");
+            if (Referenciai == Referencia) {
+                System.out.println("La plaga con esa referencia ya existe");
+                return;
+            }
+        }
         plagaList.add(PlagaDetails);
 
-        try (FileWriter file = new FileWriter(ruta + "Sustratos.json")) {
+        try (FileWriter file = new FileWriter(ruta + "Plagas.json")) {
             file.write(plagaList.toJSONString());
             file.flush();
 

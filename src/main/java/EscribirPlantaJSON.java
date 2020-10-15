@@ -45,6 +45,15 @@ public class EscribirPlantaJSON {
         plantaDetails.put("Costo", Costo);
 
         JSONArray plantaList = LeerPlantaJSON.LeerPlanta();
+
+        for (Object plantaObjeto : plantaList) {
+            JSONObject plantaJSON = (JSONObject) plantaObjeto;
+            long Referenciai = (long) plantaJSON.get("Referencia");
+            if (Referenciai == Referencia) {
+                System.out.println("La planta con esa referencia ya existe");
+                return;
+            }
+        }
         plantaList.add(plantaDetails);
 
         try (FileWriter file = new FileWriter(ruta + "Planta.json")) {

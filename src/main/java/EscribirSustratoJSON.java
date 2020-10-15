@@ -37,6 +37,15 @@ public class EscribirSustratoJSON {
         SustratoDetails.put("Costo", Costo);
 
         JSONArray sustratoList = LeerSustratoJSON.LeerSustrato();
+
+        for (Object sustratoObjeto : sustratoList) {
+            JSONObject sustratoJSON = (JSONObject) sustratoObjeto;
+            long Referenciai = (long) sustratoJSON.get("Referencia");
+            if (Referenciai == Referencia) {
+                System.out.println("El sustrato con esa referencia ya existe");
+                return;
+            }
+        }
         sustratoList.add(SustratoDetails);
 
         try (FileWriter file = new FileWriter(ruta + "Sustratos.json")) {
