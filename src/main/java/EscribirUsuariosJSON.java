@@ -11,7 +11,6 @@ public class EscribirUsuariosJSON {
     public static Scanner input = new Scanner(System.in);
     public static String ruta = "src/main/resources/database/";
 
-    //    public static void main(String[] args) {
 //public static Usuario EscribirUsuario (){
     public static void EscribirUsuario() {
 
@@ -40,25 +39,27 @@ public class EscribirUsuariosJSON {
         userDetails.put("correo", correo);
         userDetails.put("contrasena", contrasena);
 
-//        Usuario UsuarioEscrito = parseUser(userDetails);
-//        return UsuarioEscrito;
-
-
-        //Add employees to list
-//        ArrayList<Usuario> usuariosCargados = LeerUsuariosJSON.leerUsuarios();
-//        ArrayList<Usuario> usuariosCargados = LeerUsuariosJSON.leerUsuarios();
-
-//        JSONArray userList = new JSONArray();
-//        for (int i=0; i < usuariosCargados.size(); i++) {
-//            userList.add(usuariosCargados.get(i));
-//        }
-
-//        JSONArray userList = new JSONArray();
+        //Add employee to list
         JSONArray userList = LeerUsuariosJSON.leerUsuarios();
 //        for(Object usuarioObjeto : usuariosCargados){
 //            JSONObject usuarioJSON = (JSONObject) usuarioObjeto;
 //            userList.add(parseUser(usuarioJSON));
 //        }
+
+//      Verificando que no exista el mismo documento o correo en la lista de usuarios
+        for(Object usuarioObjeto : userList){
+            JSONObject usuarioJSON = (JSONObject) usuarioObjeto;
+            long documentoi = ((long) usuarioJSON.get("documento"));
+            String correoi = (String) usuarioJSON.get("correo");
+            if (documento == documentoi){
+                System.out.println("El documento ya existe");
+                return;
+            }
+            else if (correo.equals(correoi)){
+                System.out.println("El correo ya existe");
+                return;
+            }
+        }
 
         userList.add(userDetails);
 
@@ -90,6 +91,4 @@ public class EscribirUsuariosJSON {
 
         return usuarioEscrito;
     }
-
-
 }

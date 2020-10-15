@@ -1,12 +1,12 @@
 public class Jardin {
 
     public String nombreDueno;
-    public int area;
+    public long area;
     public String ambiente;
-    public int temperaturaPromedio;
+    public long temperaturaPromedio;
     public String iluminacion;
 
-    public Jardin(String nombreDueno, int area, String ambiente, int temperaturaPromedio, String iluminacion) {
+    public Jardin(String nombreDueno, long area, String ambiente, long temperaturaPromedio, String iluminacion) {
         this.nombreDueno = nombreDueno;
         this.area = area;
         this.ambiente = ambiente;
@@ -16,11 +16,11 @@ public class Jardin {
 
     @Override
     public String toString() {
-        return "Jardin{" +
-                "nombreDueño='" + nombreDueno + '\'' +
-                ", area=" + area +
+        return '\n'+ "Jardin{" +
+                "nombreDueno='" + nombreDueno + '\'' +
+                ", area m2=" + area +
                 ", ambiente='" + ambiente + '\'' +
-                ", temperaturaPromedio=" + temperaturaPromedio +
+                ", temperaturaPromedio °C=" + temperaturaPromedio +
                 ", iluminacion='" + iluminacion + '\'' +
                 '}';
     }

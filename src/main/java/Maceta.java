@@ -1,3 +1,4 @@
+
 public class Maceta {
     public int referencia;
     public String material;
@@ -25,8 +26,4 @@ public class Maceta {
                 ", costoUnitario=" + costoUnitario + '\'' +
                 '}';
     }
-    public void relacionDiametro(){
-
-    }
-
 }
